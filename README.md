@@ -72,8 +72,8 @@ V1에서는 자동 코드 수정이나 최적값 추천보다
 
 ### 진행 예정
 
-- [ ] Wiki 문서 템플릿 설계
-- [ ] 문서 간 연결 규칙 정의
+- [x] Wiki 문서 템플릿 설계
+- [x] 문서 간 연결 규칙 정의
 - [ ] LLM 분석 환경 설정
 - [ ] Pinky Pro 전체 패키지 분석
 - [ ] ROS2 파이프라인 및 코드 분석
@@ -83,13 +83,12 @@ V1에서는 자동 코드 수정이나 최적값 추천보다
 
 ## 7. 다음 작업
 
-STEP 6: 문서 템플릿 및 연결 규칙 구축
+STEP 7: LLM 소스코드 분석 환경 구축
 
-- Architecture 문서
-- Package 문서
-- Code Analysis 문서
-- Parameter 문서
-- Feature 문서
+- [ ] Pinky Pro 소스코드 접근 경로 확인
+- [ ] 분석 기준 Git Commit SHA 기록
+- [ ] LLM Agent 실행 환경 확인
+- [ ] Wiki 작성 및 갱신 워크플로 설정
 
 ## 8. 관리 원칙
 
