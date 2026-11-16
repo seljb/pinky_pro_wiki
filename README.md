@@ -53,6 +53,8 @@ V1에서는 자동 코드 수정이나 최적값 추천보다
 - [Wiki Index](index.md)
 - [Agent Instructions](AGENTS.md)
 - [Operation Log](log.md)
+- [소스코드 분석 기준](00_Overview/source-baseline.md)
+- [전체 ROS2 패키지 구조](00_Overview/package-inventory.md)
 
 주요 분석 문서는 앞으로 index.md에서 관리한다.
 
@@ -69,13 +71,15 @@ V1에서는 자동 코드 수정이나 최적값 추천보다
 - [x] index.md 생성
 - [x] log.md 생성
 - [x] AGENTS.md 초안 생성
+- [x] 소스코드 접근 경로 확인 및 분석 기준 Git Commit SHA 문서화
+- [x] 전체 ROS2 패키지 구조 조사 및 Wiki 문서화 (11개, STEP 8-3)
 
 ### 진행 예정
 
 - [x] Wiki 문서 템플릿 설계
 - [x] 문서 간 연결 규칙 정의
 - [ ] LLM 분석 환경 설정
-- [ ] Pinky Pro 전체 패키지 분석
+- [ ] Pinky Pro 전체 패키지 분석 (개별 패키지 상세 분석)
 - [ ] ROS2 파이프라인 및 코드 분석
 - [ ] 파라미터 카탈로그 구축
 - [ ] V1 질의응답 시스템 구축
@@ -85,10 +89,20 @@ V1에서는 자동 코드 수정이나 최적값 추천보다
 
 STEP 7: LLM 소스코드 분석 환경 구축
 
-- [ ] Pinky Pro 소스코드 접근 경로 확인
-- [ ] 분석 기준 Git Commit SHA 기록
+- [x] Pinky Pro 소스코드 접근 경로 확인
+- [x] 분석 기준 Git Commit SHA 기록
 - [ ] LLM Agent 실행 환경 확인
 - [ ] Wiki 작성 및 갱신 워크플로 설정
+
+STEP 8: 전체 패키지 구조 문서화 및 상세 분석 준비
+
+- [x] 전체 ROS2 패키지 11개 구조 조사 (STEP 8-1)
+- [x] 선언 의존성과 코드·Launch 정적 참조를 구분하여 Wiki 문서화 (STEP 8-3)
+- [ ] 권장 순서에 따라 개별 패키지 상세 분석 문서 작성
+- [ ] 패키지 사이의 데이터·실행 연결과 파라미터 상세 분석
+
+현재 완료 범위는 소스코드의 정적 구조 조사와 문서화이다.
+빌드·실행·런타임 동작은 미검증이며, 전체 패키지 상세 분석 완료를 의미하지 않는다.
 
 ## 8. 관리 원칙
 
