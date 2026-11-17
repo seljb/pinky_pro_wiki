@@ -55,6 +55,7 @@ V1에서는 자동 코드 수정이나 최적값 추천보다
 - [Operation Log](log.md)
 - [소스코드 분석 기준](00_Overview/source-baseline.md)
 - [전체 ROS2 패키지 구조](00_Overview/package-inventory.md)
+- [pinky_bringup 상세 분석](02_Packages/pinky_bringup.md)
 
 주요 분석 문서는 앞으로 index.md에서 관리한다.
 
@@ -73,6 +74,7 @@ V1에서는 자동 코드 수정이나 최적값 추천보다
 - [x] AGENTS.md 초안 생성
 - [x] 소스코드 접근 경로 확인 및 분석 기준 Git Commit SHA 문서화
 - [x] 전체 ROS2 패키지 구조 조사 및 Wiki 문서화 (11개, STEP 8-3)
+- [x] pinky_bringup 상세 분석 결과를 문서 유형별 5개 문서로 작성 (STEP 8-4-3)
 
 ### 진행 예정
 
@@ -98,10 +100,11 @@ STEP 8: 전체 패키지 구조 문서화 및 상세 분석 준비
 
 - [x] 전체 ROS2 패키지 11개 구조 조사 (STEP 8-1)
 - [x] 선언 의존성과 코드·Launch 정적 참조를 구분하여 Wiki 문서화 (STEP 8-3)
-- [ ] 권장 순서에 따라 개별 패키지 상세 분석 문서 작성
+- [x] pinky_bringup Package·Architecture·Code Analysis 2개·Parameter 문서 작성 (STEP 8-4-3)
+- [ ] 권장 순서에 따라 나머지 10개 패키지 상세 분석 문서 작성
 - [ ] 패키지 사이의 데이터·실행 연결과 파라미터 상세 분석
 
-현재 완료 범위는 소스코드의 정적 구조 조사와 문서화이다.
+현재 완료 범위는 전체 패키지의 정적 구조 조사와 pinky_bringup의 상세 분석 문서화이다.
 빌드·실행·런타임 동작은 미검증이며, 전체 패키지 상세 분석 완료를 의미하지 않는다.
 
 ## 8. 관리 원칙

@@ -60,3 +60,26 @@ Wiki 생성 및 유지관리 작업을 시간순으로 기록합니다.
 - 원본 보존 확인: 작업 전후 브랜치·HEAD·Git 변경 상태 동일; 추적 파일 변경 없음, 미등록 3개 유지; source-baseline.md와 작업 규칙 파일의 내용 불변 확인
 - 실행 범위: 원본은 읽기 전용으로 취급; ROS2·로봇 제어·빌드·테스트·패키지 설치 미수행, Git add/commit/push/checkout 미수행
 - 다음 작업: 변경 문서 검토 후 권장 순서에 따른 개별 패키지 상세 분석
+
+## [2026-11-17] docs | pinky_bringup detailed analysis (STEP 8-4-3)
+
+- 작업: AGENTS.md, 템플릿 규칙·문서 유형별 템플릿, 소스 분석 기준·전체 패키지 구조·색인 및 진행 상황 확인
+- 작업: STEP 8-4-1/8-4-2의 기존 분석을 Package·Architecture·Code Analysis·Parameter 문서로 구조화; 필요한 근거만 고정 SHA에서 읽기 전용 재확인
+- 원본 소스: seljb/pinky_pro (`/home/ljb/dev_ws/pinky/src/pinky_pro`)
+- 기준 브랜치: `feature/nav2-study`
+- 기준 Commit: `014a09f289e6988894fbffde2624fdb1e257815b`
+- 시작 상태: 원본 HEAD 일치, 추적 파일 변경 없음, 기존 미등록 3개 유지; Wiki 변경 없음
+- 생성 문서: [패키지](02_Packages/pinky_bringup.md), [파이프라인](01_Architecture/pinky-bringup-pipeline.md), [모터 제어](05_Code_Analysis/pinky_bringup--motor-control.md), [상태 발행](05_Code_Analysis/pinky_bringup--state-publishing.md), [파라미터](03_Parameters/pinky_bringup-parameters.md)
+- 기존 갱신: index.md에 5개 링크·설명 추가, README.md에 pinky_bringup 문서화만 완료 반영; 나머지 10개 패키지 상세 분석은 미완료 유지
+- 내용 분리: 개요·인터페이스는 Package, 전체 흐름은 Architecture, 함수·수식은 Code Analysis, 설정값·변경 영향은 Parameter를 기준으로 연결
+- 검증 범위: 정적 소스·설정·함수 호출·선언 의존성과 실제 참조; [코드 확인]·[추론]·[미검증] 구분
+- 미등록 제외: `pinky_navigation/launch/localization_only_launch.xml`, `pinky_navigation/nav2_send_goal_basic.py`, `pinky_navigation/params/amcl_params.yaml`은 HEAD 코드 근거로 사용하지 않음
+- 기존 문서 관계: 전체 구조 문서의 코드 사실과 모순은 확인하지 않았으며, 원본 분석 기준·전체 구조 문서는 변경하지 않음
+- 최종 범위 검사: 신규 문서 5/5, 전체 변경 8/8, 모든 신규 문서의 source_commit·type·source_paths 및 템플릿 절 구성 확인; Git staging 없음
+- 링크 검사: 상대경로 Wiki 링크 86개 존재 확인, 전체 SHA 고정 소스 링크 432개의 HEAD 파일·줄 범위 확인; 5개 문서 각각에서 나머지 4개 문서로 연결 확인; 원격 URL 접속 검증은 미수행
+- 수식·값 검사: 모터 속도/RPM·100 RPM 제한·SDK raw 전송·feedback signed 변환·Odometry/JointState·파라미터 선언/읽기를 원본 구문과 정적으로 대조해 일치 확인; YAML 두 키와 설정값 원문 일치
+- 형식 검사: git diff --check 종료 코드 0 및 출력 없음; 신규 문서 5개를 포함한 8개 파일의 마지막 공백·불필요한 연속/EOF 빈 줄 검사 통과
+- 보존 검사: 기존 index 링크·설명 및 log 이력 보존, 허용 범위 밖 기존 Wiki 파일 19개 불변; 원본 브랜치·HEAD·Git 상태가 작업 시작 시점과 동일
+- 남은 미검증: 실제 런타임 설정값·물리 단위·기구 보정·외부 SDK/Battery/LiDAR·QoS/TF·모터/센서 동작, Joint 이름·부호·초기화 실패/종료 처리의 실제 영향
+- 실행 범위: 원본 수정, ROS2·로봇·모터·센서·simulator 실행, 빌드·테스트·설치·시스템 설정 변경 및 Git add/commit/push/checkout 미수행
+- 다음 작업: 작성 문서 검토와 미검증 사항의 정적 추가 분석, 이후 권장 순서의 다음 패키지 상세 분석; 실제 실행 검증은 이번 범위 밖
