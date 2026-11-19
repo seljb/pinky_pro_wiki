@@ -1,3 +1,50 @@
+# Pinky Pro learning index — 2026-11-19
+
+Start with the roadmap. Each new learning page uses English prose, diagrams and tables; source references are optional audit trails. Existing Korean analysis remains preserved below this current index.
+
+| Page | Learning purpose |
+|---|---|
+| [Learning roadmap](00_Overview/learning-roadmap.md) | Complete first study unit, six sessions, worked examples and bringup reference connections. |
+| [System overview](01_Architecture/system-overview.md) | Eleven packages, launch boundaries and command/feedback loops. |
+| [Motion and feedback](04_Features/motion-and-feedback.md) | English bringup lesson: RPM, encoders, odometry, TF and battery. |
+| [Robot description and TF](01_Architecture/robot-description-and-tf.md) | Links, joints, frame ownership and the joint-name mismatch. |
+| [Simulation pipeline](01_Architecture/simulation-pipeline.md) | MuJoCo/Gazebo launch selection, bridges, clock and sensor differences. |
+| [Navigation and SLAM](01_Architecture/navigation-pipeline.md) | Saved maps, AMCL, mapping, planning, control and lifecycle boundaries. |
+| [Sensors and expression](01_Architecture/sensors-and-expression.md) | Independent peripheral nodes, messages and service paths. |
+| [ROS 2 interface atlas](04_Features/ros2-interface-atlas.md) | Topics, services, actions, TF and message-contract distinctions. |
+| [pinky_description](02_Packages/pinky_description.md) | Shared Xacro, robot frames and description publishers. |
+| [pinky_gz_sim](02_Packages/pinky_gz_sim.md) | Gazebo plugins, worlds and ROS/Gazebo bridges. |
+| [pinky_mujoco](02_Packages/pinky_mujoco.md) | Description conversion, physics, simulated sensors and ROS adapter. |
+| [pinky_navigation](02_Packages/pinky_navigation.md) | Navigation entrypoints, external dependencies and browser bridge. |
+| [pinky_imu_bno055](02_Packages/pinky_imu_bno055.md) | BNO055 acquisition, message fields and unit questions. |
+| [pinky_sensor_adc](02_Packages/pinky_sensor_adc.md) | ADC channels, range, IR and separate battery state. |
+| [pinky_interfaces](02_Packages/pinky_interfaces.md) | Four shared service definitions and implementation links. |
+| [pinky_lamp_control](02_Packages/pinky_lamp_control.md) | Lamp modes, timing and hardware service implementation. |
+| [pinky_led](02_Packages/pinky_led.md) | Pixel/color/brightness services through pinkylib. |
+| [pinky_emotion](02_Packages/pinky_emotion.md) | GIF/LCD expression servers and legacy entrypoint caveat. |
+| [Navigation parameters](03_Parameters/navigation-parameters.md) | Source values, launch routing and expected parameter effects. |
+| [Navigation web walkthrough](05_Code_Analysis/navigation-web-control.md) | Browser coordinates, cached state and asynchronous request outcomes. |
+| [Latest local review and validation](06_Change_History/2026-11-19-learning-wiki-review.md) | This session's actual file changes, preserved baseline and validation scope. |
+| [Previous evidence and validation](06_Change_History/2026-11-18-learning-wiki-evidence.md) | Preserved earlier writing and validation record. |
+
+[Home](README.md) · [Operation log](log.md) · [Agent instructions](AGENTS.md) · [Document templates](templates/README.md)
+
+## Preserved reference analysis
+
+- [Source baseline, 2026-11-17](00_Overview/source-baseline.md)
+- [Complete package inventory](00_Overview/package-inventory.md)
+- [Bringup package](02_Packages/pinky_bringup.md)
+- [Bringup pipeline](01_Architecture/pinky-bringup-pipeline.md)
+- [Motor implementation](05_Code_Analysis/pinky_bringup--motor-control.md)
+- [State publishing implementation](05_Code_Analysis/pinky_bringup--state-publishing.md)
+- [Bringup parameter catalog](03_Parameters/pinky_bringup-parameters.md)
+
+---
+
+## Historical index — preserved from 2026-11-17
+
+The original index below is retained verbatim. Its statement that ten package analyses are pending describes that earlier date; use the current index above for the expanded English route.
+
 # Pinky Pro LLM Wiki Index
 
 ## 프로젝트 안내

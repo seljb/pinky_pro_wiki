@@ -83,3 +83,38 @@ Wiki 생성 및 유지관리 작업을 시간순으로 기록합니다.
 - 남은 미검증: 실제 런타임 설정값·물리 단위·기구 보정·외부 SDK/Battery/LiDAR·QoS/TF·모터/센서 동작, Joint 이름·부호·초기화 실패/종료 처리의 실제 영향
 - 실행 범위: 원본 수정, ROS2·로봇·모터·센서·simulator 실행, 빌드·테스트·설치·시스템 설정 변경 및 Git add/commit/push/checkout 미수행
 - 다음 작업: 작성 문서 검토와 미검증 사항의 정적 추가 분석, 이후 권장 순서의 다음 패키지 상세 분석; 실제 실행 검증은 이번 범위 밖
+
+## [2026-11-18] docs | English learning route and full package coverage
+
+- 작업: 기존 AGENTS.md, 문서 템플릿, 색인, README, 로그와 분석 문서를 확인하고 기존 폴더 구조를 이어서 사용했다.
+- 접근: 이 로컬 세션에서 원본과 Wiki를 직접 읽었다. 별도의 ChatGPT Work 창이나 파일 권한 팝업을 열었다고 기록하지 않는다.
+- 언어: 학습 본문·그림·표는 영어, 설명용 코드 주석과 작업 메모는 한국어로 작성했다.
+- 원본: `/home/ljb/dev_ws/pinky/src/pinky_pro`, 기준 SHA `014a09f289e6988894fbffde2624fdb1e257815b`.
+- 범위: 영어 학습 로드맵, 전체 구조, bringup 통합 학습, 나머지 10개 패키지, TF·시뮬레이션·탐색·센서 파이프라인, 인터페이스 지도, 탐색 파라미터와 웹 코드 분석.
+- 보존: 기존 분석 문서 7개와 규칙·템플릿·미등록 `main`을 보존했다. README/index는 기존 내용을 날짜가 있는 역사 기록으로 보존하고 최신 영어 안내를 앞에 추가했다. 과거 로그는 보존했다.
+- 근거: 모든 분석은 기준 커밋의 파일과 줄 번호에 연결했다. 미등록 navigation 파일 3개는 기준 SHA 코드 근거에서 제외했다.
+- 검증 상태: 코드 확인·추론·미검증을 구분했다. YAML 설정과 실제 적용값, 요청 발행과 비동기 완료 결과를 구분했다.
+- 최종 변경 목록과 실제 검증 결과: [Evidence and validation](06_Change_History/2026-11-18-learning-wiki-evidence.md).
+- 실행 범위: 문서와 그림 검증만 수행했다. ROS2·로봇·시뮬레이터·빌드·저장소 테스트·Git add/commit/push/checkout은 수행하지 않았다.
+
+## [2026-11-19] docs | Local learning unit review and extension
+
+- 작업: 실제 소스와 Wiki 경로, Git 상태, AGENTS.md와 templates/README.md를 확인했다. 원본 HEAD는 기준 SHA와 일치했다.
+- 시작 상태: Wiki에는 2026-11-18 영어 학습 문서와 미커밋 변경이 이미 있었다. 이를 새로 만든 것으로 보고하지 않고 전체 기존 파일을 먼저 백업했다.
+- 언어: 학습 본문·Mermaid·표는 영어, 설명용 코드 주석·작업 메모는 한국어로 유지했다.
+- 갱신: 첫 완결 학습 단위와 bringup 연결, 전체 구조·시작 준비, Node/Topic/Service/Action/TF 관계, 실물/Gazebo/MuJoCo launch 흐름, 두 시뮬레이터 명령·피드백 예제를 보완했다.
+- 발견: hardware의 use_sim_time 전달과 description의 is_sim 사용이 다른 점을 코드 확인으로 기록했다. 실제 launch 실패나 적용 시각은 미검증으로 남겼다. Gazebo 그림에서 scan과 odom의 독립 생산자를 구분하고 MuJoCo setup 순서를 정정했다.
+- 실제 변경: 기존 문서 10개 갱신, 이번 세션 증거 보고서 1개 생성. 상세 경로·검증 결과는 [2026-11-19 검토 보고서](06_Change_History/2026-11-19-learning-wiki-review.md)에 기록한다.
+- 보존: 이전 log 전체, README/index의 과거 기록, 기존 bringup 분석·규칙·템플릿·main과 원본의 미등록 3개 파일을 보존했다.
+- 실행 범위: 정적 코드 대조·문서·그림 검증만 수행했다. ROS2·로봇·시뮬레이터·빌드·저장소 테스트는 실행하지 않았다. 원본 수정과 Git add/commit/push/checkout도 수행하지 않았다.
+- 다음 학습: Obsidian에서 learning-roadmap의 첫 단위와 self-check를 읽는다. 이후 navigation/sensor/expression 순서로 깊이를 넓히며 런타임 검증은 별도 근거가 생길 때 기록한다.
+
+## [2026-11-19] docs | GitHub publication preparation
+
+- 승인: 사용자가 기존 영어 학습 자료를 `seljb/pinky_pro_wiki`의 `main`으로 push하여 집 PC에서도 확인하도록 명시적으로 승인했다.
+- 확인: 실제 Wiki 경로·main 브랜치·Git 상태·origin을 확인했다. GitHub main을 fetch한 결과 기존 기준 커밋 `512c40ab5bd947406d392ab9ba48bfd1127c6cc3`과 일치하여 원격과 분기되지 않았다.
+- 게시 범위: 이미 로컬에 있던 영어 Markdown 22개와 README/index/log 변경만 포함한다. 새 학습 자료를 과거 작업인 것처럼 재생성하지 않았다. 빈 미등록 파일 `main`은 보존하고 커밋에서 제외한다.
+- 검증: 상대 링크·제목 앵커, 기준 SHA에 고정된 소스 링크 1,272개와 81개 소스 파일의 경로·줄 범위, 색인 등록, 학습 본문 영어·설명용 코드 주석 한국어, 비밀정보 패턴과 공백 오류를 점검했다. 별도 읽기 전용 검토에서도 게시 차단 문제가 없었다.
+- 보존: 게시 전 Wiki 파일 전체를 별도 백업했다. 과거 README/index/log 내용을 그대로 보존했고 원본 소스 파일 160개·HEAD·Git 상태가 시작 시점과 같음을 확인했다. 원본의 미등록 3개 파일도 보존했다.
+- 안내: README에 집 PC의 웹 열람, 최초 clone, Obsidian Vault 열기 및 이후 `pull --ff-only` 방법을 영어로 추가했다.
+- 실행 범위: 문서 정적 검증과 Git 동기화 준비만 수행했다. 로봇·ROS 노드·시뮬레이터·빌드·원본 코드 변경은 수행하지 않았다. 이 항목은 커밋 전 준비 기록이며 push 성공 여부와 최종 SHA는 실제 GitHub 조회 후 작업 결과로 보고한다.

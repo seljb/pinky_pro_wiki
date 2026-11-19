@@ -1,3 +1,58 @@
+# Pinky Pro Learning Wiki
+
+Start with the [learning roadmap](00_Overview/learning-roadmap.md), then follow the [system overview](01_Architecture/system-overview.md). The English lessons explain the implementation with diagrams, worked examples, questions and answers. Source links provide evidence; reading the raw code is optional.
+
+## Open in Obsidian
+
+Choose **Open folder as vault** and select `/home/ljb/dev_ws/pinky_pro_wiki`. Open this `README.md`, then the roadmap. Use the [full index](index.md) to jump between lessons and packages. Mermaid diagrams are embedded in Markdown fences for reading view.
+
+## Read from another PC
+
+Open the [GitHub repository](https://github.com/seljb/pinky_pro_wiki) in a browser and follow the [learning roadmap](00_Overview/learning-roadmap.md) or [full index](index.md). The Wiki is stored as Markdown files in this repository.
+
+For Obsidian, first download a local copy from a terminal in your chosen parent folder:
+
+```bash
+git clone https://github.com/seljb/pinky_pro_wiki.git
+```
+
+In Obsidian, choose **Open folder as vault**, select the cloned `pinky_pro_wiki` folder, and open `README.md` or `00_Overview/learning-roadmap.md`. The source-code checkout is optional for reading the lessons.
+
+To receive later published updates, run this from the same parent folder:
+
+```bash
+git -C pinky_pro_wiki pull --ff-only
+```
+
+## Current learning coverage — 2026-11-19
+
+The English lessons already present locally have been preserved and extended. Begin with the roadmap's **first complete study unit**: follow one motion request through command, feedback, frames and launch selection. The latest review adds a full TF ownership chain, precise node identities, hardware/Gazebo/MuJoCo launch comparisons, and simulator command examples. See the [current local review](06_Change_History/2026-11-19-learning-wiki-review.md) for the exact changes and checks performed in this session.
+
+All 11 repository packages are covered in the learning route: the English [motion and feedback lesson](04_Features/motion-and-feedback.md) explains bringup, and ten new package pages cover description, both simulators, navigation, sensors, interfaces and expression. The existing detailed bringup/package inventory pages remain available in their original Korean form as optional references.
+
+| Read next | What you will understand |
+|---|---|
+| [Motion and feedback](04_Features/motion-and-feedback.md) | A requested velocity, wheel RPM, encoders, odometry and TF |
+| [Robot description and TF](01_Architecture/robot-description-and-tf.md) | Body geometry, joints and frame relationships |
+| [Simulation](01_Architecture/simulation-pipeline.md) | MuJoCo and Gazebo paths, contracts and differences |
+| [Navigation](01_Architecture/navigation-pipeline.md) | SLAM, localization, saved maps, planning and control |
+| [Sensors and expression](01_Architecture/sensors-and-expression.md) | Peripheral nodes and service contracts |
+| [Interface atlas](04_Features/ros2-interface-atlas.md) | Topics, services, actions and TF across the system |
+
+Learning prose, diagrams and tables use English. Educational code comments and working notes use Korean. Each lesson distinguishes source-confirmed facts, interpretation and unverified runtime behavior.
+
+## Evidence and maintenance
+
+Source: `seljb/pinky_pro`, commit `014a09f289e6988894fbffde2624fdb1e257815b`, read from `/home/ljb/dev_ws/pinky/src/pinky_pro`. Three local untracked navigation files are excluded from commit-based evidence. See the [dated evidence report](06_Change_History/2026-11-18-learning-wiki-evidence.md) for exact files and validation.
+
+This is static source analysis. No ROS nodes, robot commands, simulator, build or repository tests were run. Source configuration values are distinguished from effective runtime values. The source repository is preserved. [Operation log](log.md) records Korean working notes; [agent rules](AGENTS.md) and [templates](templates/README.md) retain the existing maintenance workflow.
+
+---
+
+## Historical setup notes — preserved from 2026-11-17
+
+The original README below is retained verbatim. Its pending-work checkboxes describe the earlier state; the dated section above is the current learning status.
+
 # Pinky Pro LLM Wiki
 
 LLM-powered documentation and code analysis for Pinky Pro ROS2.
